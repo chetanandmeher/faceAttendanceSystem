@@ -1,27 +1,24 @@
 import os
-
 from numpy import ndarray
-from typing import List, Any
-
 import cv2
 import face_recognition
 import pickle
 
 
 # importing images
-imgPathList = sorted(os.listdir('images'))      # the order : ['1.png', '10.png', '11.png', '12.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png', '8.png', '9.png']
+imgPathList = os.listdir('Images3')      # the order : ['1.png', '10.png', '11.png', '12.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png', '8.png', '9.png']
 imgList = []
 # store the employee ID
 employeeIDs = []
 for path in imgPathList:
-    imgPath = os.path.join("images",path)
+    imgPath = os.path.join("Images3",path)
     imgList.append(cv2.imread(imgPath))
 
     employeeIDs.append(path[:-4])
 # print(employeeID)
 
 # Define the encoding function which gives the encoding of faces from the images
-def findEncoding(imagesList: List):
+def findEncoding(imagesList: list):
     # create a list to store encoding of images
     encodeList = []
 
@@ -39,7 +36,7 @@ def findEncoding(imagesList: List):
 
 print('Encoding started.....')
 encodeListKnown = findEncoding(imgList)
-encodeListKnownWithIDs: list[list[ndarray] | list[Any]] = [encodeListKnown,employeeIDs]
+encodeListKnownWithIDs: list[list[ndarray] | list[any]] = [encodeListKnown,employeeIDs]
 print("Encoding completed :)")
 
 # creating a pickle file
