@@ -43,7 +43,7 @@ for path in modePathList:
     imgModeList.append(cv2.imread(imgPath))
 
 # load the encoding file
-print("Loadind encode file....")
+print("Loading encode file....")
 file = open('EncodingFile.p', "rb")
 encodeListKnownWithIDs = pickle.load(file)
 encodeListKnown, employeeIDs = encodeListKnownWithIDs
@@ -67,14 +67,18 @@ while True:
     img = cv2.flip(img, 1)
 
     # reducing the image size to 1/4th of original
-    imgS = cv2.resize(img, (0, 0), None, 0.25, 0.25)
+    imgS = cv2.resize(img, (0, 0), None, fx=0.25, fy=0.25)
+
+    # convert the img color from BGR to RGB
     imgS = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
     # get the face location in the current frame
     faceCurrFrame = face_recognition.face_locations(imgS)
+
     # get the encoding of the face
     # function(imageToBeEncoded, locationOfFaceInCurrentFace)
     encodeCurFrame = face_recognition.face_encodings(imgS, faceCurrFrame)
+
     # selecting the coordinates for the superimposing the webcam with the background and
     # different modes
     #            [height , width]

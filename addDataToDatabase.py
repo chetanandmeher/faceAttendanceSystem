@@ -51,6 +51,15 @@ data = {
                 'total attendance': 10,
                 'department': 'IT',
                 'last time attendance': '2023-05-26 10:28:00'
+            },
+    '987456':
+            {
+                'name': 'Makhan',
+                'age' : 18,
+                'starting year': 2010,
+                'total attendance': 0,
+                'department': 'manager',
+                'last time attendance': '2023-05-26 10:28:00'
             }
 }
 
