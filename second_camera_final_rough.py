@@ -10,6 +10,7 @@ from firebase_admin import db
 from firebase_admin import storage
 from datetime import datetime
 import csv
+
 # initialising the database
 cred = credentials.Certificate("serviceAccountKey.json")
 firebase_admin.initialize_app(credential=cred, options={
@@ -134,7 +135,7 @@ while True:
             # updating the entry csv file
             with open('Entry_time.csv', 'a', newline='') as file:
                 writer = csv.writer(file)
-                data =[[ID, employeeInfo['name'], last_time_attendance]]
+                data = [[ID, employeeInfo['name'], last_time_attendance]]
                 writer.writerows(data)
         else:
             print('your attendance is already done. :)')
@@ -202,7 +203,8 @@ while True:
     # print("laptop_faces_name:  ", laptop_faces_name)
 
     # for laptop
-    for (laptop_top, laptop_right, laptop_bottom, laptop_left), laptop_name in zip(laptop_face_locations, laptop_faces_name):
+    for (laptop_top, laptop_right, laptop_bottom, laptop_left), laptop_name in zip(laptop_face_locations,
+                                                                                   laptop_faces_name):
         print("exatually hogya")
         # # for top, right, bottom, left in face_locations:
         # Scale the face locations back up since the frame was resized
@@ -280,3 +282,5 @@ while True:
 # Release the video capture and destroy all windows
 laptop_video_capture.release()
 cv2.destroyAllWindows()
+
+# **************************************************** final code **************************************************** #
