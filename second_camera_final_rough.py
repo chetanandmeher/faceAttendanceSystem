@@ -118,7 +118,7 @@ while True:
 
         # update the attendance
         ref = db.reference(f'Employees/{ID}')
-        datetimeObject = datetime.strptime(employeeInfo['last time attendance'], '%Y-%m-%d %H:%M:%S')
+        #### datetimeObject = datetime.strptime(employeeInfo['last time attendance'], '%Y-%m-%d %H:%M:%S')
         secondElapsed = (datetime.now() - datetimeObject).total_seconds()
         print('checking the time elapsed..')
         print("secondElapsed: ", secondElapsed)
@@ -126,10 +126,10 @@ while True:
         if secondElapsed > 30:
             # increase the attendance bu 1
             employeeInfo['total attendance'] += 1
-            ref.child('total attendance').set(employeeInfo['total attendance'])
+            #### ref.child('total attendance').set(employeeInfo['total attendance'])
             # updating the last time attendance
             currTime = datetime.strftime(datetime.now(), '%Y-%m-%d %H:%M:%S')
-            ref.child('last time attendance').set(currTime)
+            #### ref.child('last time attendance').set(currTime)
             last_time_attendance = currTime
 
             # updating the entry csv file
@@ -172,7 +172,7 @@ while True:
             mob_faces_name.append(name)
 
         # update the attendance
-        ref = db.reference(f'Employees/{ID}')
+        #### ref = db.reference(f'Employees/{ID}')
         datetimeObject = datetime.strptime(employeeInfo['last time attendance'], '%Y-%m-%d %H:%M:%S')
         secondElapsed = (datetime.now() - datetimeObject).total_seconds()
         print('checking the time elapsed..')
@@ -181,10 +181,10 @@ while True:
         if secondElapsed > 30:
             # increase the attendance bu 1
             employeeInfo['total attendance'] += 1
-            ref.child('total attendance').set(employeeInfo['total attendance'])
+            #### ref.child('total attendance').set(employeeInfo['total attendance'])
             # updating the last time attendance
             currTime = datetime.strftime(datetime.now(), '%Y-%m-%d %H:%M:%S')
-            ref.child('last time attendance').set(currTime)
+            #### ref.child('last time attendance').set(currTime)
             last_time_attendance = currTime
 
             # updating the entry csv file
@@ -196,7 +196,7 @@ while True:
             print('your exit attendance is already done. :)')
 
     # Display the results
-    print("isssss baar hogya")
+    # print("isssss baar hogya")
     # print('mob_face_locations:  ', mob_face_locations)
     # print("mob_faces_name:  ", mob_faces_name)
     # print('laptop_face_locations:  ', laptop_face_locations)
@@ -205,7 +205,7 @@ while True:
     # for laptop
     for (laptop_top, laptop_right, laptop_bottom, laptop_left), laptop_name in zip(laptop_face_locations,
                                                                                    laptop_faces_name):
-        print("exatually hogya")
+        # print("exatually hogya")
         # # for top, right, bottom, left in face_locations:
         # Scale the face locations back up since the frame was resized
         # mob_top *= 4
@@ -218,7 +218,7 @@ while True:
         laptop_left *= 4
 
         # Draw a box around the face
-        print("drawing the boxes....")
+        #### print("drawing the boxes....")
         # for laptop
         cv2.rectangle(laptop_frame, (laptop_left, laptop_top), (laptop_right, laptop_bottom), (0, 0, 255), 2)
 
@@ -226,7 +226,7 @@ while True:
         # cv2.rectangle(mob_frame, (mob_left, mob_top), (mob_right, mob_bottom), (0, 0, 255), 2)
 
         # Draw a label with the name below the face
-        print('labeling the faces')
+        #### print('labeling the faces')
         # for laptop
         cv2.rectangle(laptop_frame, (laptop_left, laptop_bottom - 35), (laptop_right, laptop_bottom), (0, 0, 255),
                       cv2.FILLED)
@@ -241,7 +241,7 @@ while True:
 
     # for mobile
     for (mob_top, mob_right, mob_bottom, mob_left), mob_name in zip(mob_face_locations, mob_faces_name):
-        print("exatually hogya")
+        #### print("exatually hogya")
         # # for top, right, bottom, left in face_locations:
         # Scale the face locations back up since the frame was resized
         mob_top *= 4
@@ -250,7 +250,7 @@ while True:
         mob_left *= 4
 
         # Draw a box around the face
-        print("drawing the boxes....")
+        #### print("drawing the boxes....")
         # for laptop
         cv2.rectangle(mob_frame, (mob_left, mob_top), (mob_right, mob_bottom), (0, 0, 255), 2)
 
@@ -258,7 +258,7 @@ while True:
         # cv2.rectangle(mob_frame, (mob_left, mob_top), (mob_right, mob_bottom), (0, 0, 255), 2)
 
         # Draw a label with the name below the face
-        print('labeling the faces')
+        #### print('labeling the faces')
         # for laptop
         cv2.rectangle(mob_frame, (mob_left, mob_bottom - 35), (mob_right, mob_bottom), (0, 0, 255),
                       cv2.FILLED)
