@@ -16,7 +16,7 @@ data = {
             'name': 'Chetanand Meher',
             'age': 19,
             'starting year': 2023,
-            'total attendance': 4,
+            'total attendance': 0,
             'department': 'Chairman',
             'last time attendance': '2023-05-26 10:28:00'
 
@@ -28,7 +28,7 @@ data = {
                 'name': 'Ramu kaka',
                 'age' : 34,
                 'starting year': 2018,
-                'total attendance': 5,
+                'total attendance': 0,
                 'department': 'Adviser',
                 'last time attendance': '2023-05-26 10:28:00'
 
@@ -38,7 +38,7 @@ data = {
                 'name': 'Ramlaal ki biwi',
                 'age' : 28,
                 'starting year': 2019,
-                'total attendance': 8,
+                'total attendance': 0,
                 'department': 'Sweeper',
                 'last time attendance': '2023-05-26 10:28:00'
 
@@ -48,7 +48,7 @@ data = {
                 'name': 'Elonwa Mushka',
                 'age' : 52,
                 'starting year': 2010,
-                'total attendance': 10,
+                'total attendance': 0,
                 'department': 'IT',
                 'last time attendance': '2023-05-26 10:28:00'
             },

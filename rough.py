@@ -45,6 +45,7 @@ face_names = []
 # Load the video capture
 video_capture = cv2.VideoCapture(0)
 
+
 while True:
     # Read a single frame from the video capture
     ret, frame = video_capture.read()
@@ -61,7 +62,7 @@ while True:
     # Find all the faces and their encodings in the current frame
     face_locations = face_recognition.face_locations(rgb_small_frame)
     face_encodings = face_recognition.face_encodings(rgb_small_frame, face_locations)
-
+    print(f'face encodings:  {face_encodings}')
     # Initialize an empty list to store the names of the detected faces
     face_names = []
 

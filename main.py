@@ -43,7 +43,7 @@ for path in modePathList:
     imgModeList.append(cv2.imread(imgPath))
 
 # load the encoding file
-print("Loadind encode file....")
+print("Loading encode file....")
 file = open('EncodingFile.p', "rb")
 encodeListKnownWithIDs = pickle.load(file)
 encodeListKnown, employeeIDs = encodeListKnownWithIDs
